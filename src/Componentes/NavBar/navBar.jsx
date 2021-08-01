@@ -24,15 +24,17 @@ export const NavBar = () => {
                 className="d-inline-block align-top"
               />{" "}
             </Navbar.Brand>
-            <Navbar.Collapse id="navbarScroll">
+            <Navbar.Collapse className="justify-content-center" id="navbarScroll">
               <Nav
-                className="mr-auto my-2 my-lg-0"
+                
+                
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
                 <Nav.Link href="#action1">Home</Nav.Link>
                 <NavDropdown title="Productos" id="navbarScrollingDropdown">
                   <NavDropdown.Item href="#action3">Remeras</NavDropdown.Item>
+                  <NavDropdown.Divider />
                   <NavDropdown.Item href="#action4">
                     Suplementos
                   </NavDropdown.Item>
