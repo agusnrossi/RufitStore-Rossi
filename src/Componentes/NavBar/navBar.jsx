@@ -1,14 +1,15 @@
 import React from "react";
 import logoRufit from "../../assets/img/logoRufit.png";
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container,Col } from "react-bootstrap";
+import CartWidget from './CartWidget'
 
-export const NavBar = () => {
+const NavBar = () => {
   return (
     <div>
       <>
         <br />
         <Navbar
-          fixed="top"
+          sticky="top"
           collapseOnSelect
           expand="lg"
           bg="dark"
@@ -24,13 +25,11 @@ export const NavBar = () => {
                 className="d-inline-block align-top"
               />{" "}
             </Navbar.Brand>
-            <Navbar.Collapse className="justify-content-center" id="navbarScroll">
-              <Nav
-                
-                
-                style={{ maxHeight: "100px" }}
-                navbarScroll
-              >
+            <Navbar.Collapse
+              className="justify-content-center"
+              id="navbarScroll"
+            >
+              <Nav style={{ maxHeight: "100px" }} navbarScroll>
                 <Nav.Link href="#action1">Home</Nav.Link>
                 <NavDropdown title="Productos" id="navbarScrollingDropdown">
                   <NavDropdown.Item href="#action3">Remeras</NavDropdown.Item>
@@ -47,6 +46,9 @@ export const NavBar = () => {
                   Contacto
                 </Nav.Link>
               </Nav>
+              <Col md={{ span: 3, offset: 3 }}>{`md={{ span: 3, offset: 3 }}`}
+              <CartWidget/>
+              </Col>
             </Navbar.Collapse>
           </Container>
         </Navbar>
@@ -54,3 +56,5 @@ export const NavBar = () => {
     </div>
   );
 };
+
+export default NavBar;
