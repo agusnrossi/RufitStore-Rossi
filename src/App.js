@@ -1,14 +1,18 @@
 
 import './App.css';
-import {NavBar} from'./Componentes/NavBar/navBar'
+import NavBar from'./Componentes/NavBar/navBar'
+import ItemListContainer from './Componentes/ItemListContainer';
+
+
+
 function App() {
   return (
     <div className="App">
      
-        <NavBar/>
-
-
-    
+        <NavBar/>{''}
+        
+        <ItemListContainer greeting="Bienvenido!, aqui se ubicará el listado de productos"/>
+        
     </div>
   );
 }
