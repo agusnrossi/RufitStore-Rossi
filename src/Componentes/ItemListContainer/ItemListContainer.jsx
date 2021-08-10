@@ -1,5 +1,7 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import ItemCount from '../ItemCount/ItemCount.js';
 
 
 const ItemListContainer=(props)=>{
@@ -9,6 +11,9 @@ const ItemListContainer=(props)=>{
                 <Card >
                     <Card.Body>
                         {props.greeting}
+                        <div> 
+                            <ItemCount onAdd={this.handleAdd} stock={this.stock} inicial={1}/>
+                        </div>
                     </Card.Body>
                     </Card>
                     </>
