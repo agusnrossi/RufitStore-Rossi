@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import ItemCount from '../ItemCount/ItemCount.js';
+import ItemCount from '../ItemCount/ItemCount';
 
 
-const ItemListContainer=(props)=>{
+const ItemListContainer=(handleAdd,stock)=>{
 
     return   <div>
                 <>
@@ -12,7 +12,7 @@ const ItemListContainer=(props)=>{
                     <Card.Body>
                         {props.greeting}
                         <div> 
-                            <ItemCount onAdd={this.handleAdd} stock={this.stock} inicial={1}/>
+                            <ItemCount onadd={handleAdd} stock={stock} inicial={1}/>
                         </div>
                     </Card.Body>
                     </Card>
