@@ -1,22 +1,35 @@
 import React from 'react'
+import { Card, Button } from 'react-bootstrap';
+import { Col,Row } from 'react-bootstrap';
 
-function Item(props) {   
-    const items=props.item;
-    const listItems = items.map((item) => 
-    <li>{item}</li>
-    ) 
+export default Item
+function Item(props) {
+    const card = (
+        <Row >
+            {props.items.map((item) =>
+                <Col key={item.id} >
+                    <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={item.pictureUrl}/>
+                        <Card.Body>
+                            <Card.Title>{item.title}</Card.Title>
+                            <Card.Text>
+                                {item.description}
+                                <br></br>
+                                {item.price}
+                            </Card.Text>
+                            <Button variant="primary">Detalles</Button>
+                        </Card.Body>
+                    </Card>
+
+                </Col>
+            )}
+        </Row>
+
+
+    );
     return (
         <div>
-      <ul>{listItems}</ul>
+            {card}
         </div>
-    )
+    );
 }
-// eslint-disable-next-line no-unused-vars
-const items = [
-    {id: '1', 
-    title :'Remera Rufit', 
-    price:'900', 
-    description :'Remera modo Rufus', 
-    pictureUrl:''}
-]
-export default Item

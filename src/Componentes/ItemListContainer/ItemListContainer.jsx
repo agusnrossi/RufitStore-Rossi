@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
-//import ItemList from '../Item/ItemDetails'
+import ItemList from '../Item/ItemList'
 
 
 const ItemListContainer=(props)=>{
@@ -23,7 +23,7 @@ const handleAdd = (counter) => {
                     <Card.Body>
                         {props.greeting} 
                         <ItemCount onAdd={handleAdd} stock={stock} inicial={1}/>
-                        
+                        <ItemList/>
                     </Card.Body>
                     </Card>
                     </>
