@@ -1,9 +1,7 @@
-/* eslint-disable no-undef */
-import React from 'react';
 import { Card } from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../Item/ItemList'
-import { useState, useEffect } from "react"
+import { React, useState, useEffect } from "react"
 
 
 
@@ -11,7 +9,7 @@ let arrayItems = [
   {
     id: 0,
     title: "Remera Rufit",
-    price: "$900",
+    price: 900,
     pictureUrl:
       "https://www.rufit.com.ar/media/productos/a_f9bUcDP.jpg",
   }
@@ -36,11 +34,13 @@ function ItemListContainer(props) {
       <>
         <Card >
           <Card.Body>
-            {props.greeting}
-            { }
+
             <br></br>
+
+            <br></br>
+            
             <ItemCount stock={10} initial={1} />
-            <br></br>
+            <br/>
             <ItemList items={items} />
           </Card.Body>
         </Card>

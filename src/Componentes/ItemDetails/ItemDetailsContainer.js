@@ -1,28 +1,28 @@
-import React,{ useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ItemDetail from '../ItemDetails/ItemDetails';
 
 
 function ItemDetailContainer() {
+    const [item, setItem] = useState({})
 
-    const [data, setData] = useState({});
+    const getItem = async () => {
+        setTimeout(async () => {
+            setItem({
 
-React.useEffect(() => {
-     setTimeout(() => {
-     	console.log('USE EFFECT');
-     }, 2000);
-    fetch('https://kohls.p.rapidapi.com/auto-complete'
-        
-    )
-        .then((res) => res.json())
-        .then((dataApi) => setData(dataApi));
-}, []);
-    return (
-        <div>
-            <div className='container'>
-        <ItemDetail data={data} />
-    </div>
-        </div>
-    )
+                id: 0,
+                title: "Remera Rufit",
+                price: 900,
+                pictureUrl:
+                    "https://www.rufit.com.ar/media/productos/a_f9bUcDP.jpg",
+            });
+        }, 1000);
+    };
+
+    useEffect(() => {
+        getItem();
+    }, [])
+    return <ItemDetail item={item} />
+
 }
 
 export default ItemDetailContainer

@@ -11,7 +11,7 @@ function Item({ id, title, price, pictureUrl }) {
         <Card.Title>{title}</Card.Title>
         <Card.Text>Detalle del producto.</Card.Text>
         <p>${price}</p>
-        <Button variant="primary">Agregar al carrito</Button>
+        <Button variant="primary">+ INFO</Button>
       </Card.Body>
     </Card>
   );
