@@ -1,7 +1,8 @@
 import React from "react";
 import logoRufit from "../../assets/img/logoRufit.png";
 import { Navbar, Nav, NavDropdown, Container,Col } from "react-bootstrap";
-import CartWidget from './CartWidget'
+import CartWidget from './CartWidget';
+import {Link} from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -32,17 +33,13 @@ const NavBar = () => {
               <Nav style={{ maxHeight: "100px" }} navbarScroll>
                 <Nav.Link href="#action1">Home</Nav.Link>
                 <NavDropdown title="Productos" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action3">Remeras</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/category/remeras">Remeras</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action4">
+                  <NavDropdown.Item as={Link} to="/category/suplementos">
                     Suplementos
                   </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Accesorios
-                  </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="#" disabled>
+                <Nav.Link as={Link} to="/Contacto" >
                   Contacto
                 </Nav.Link>
               </Nav>

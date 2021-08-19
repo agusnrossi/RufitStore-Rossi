@@ -1,51 +1,30 @@
-import { Card } from 'react-bootstrap';
-import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../Item/ItemList'
 import { React, useState, useEffect } from "react"
+import {Productos} from '../src/Productos/Productos'
 
 
-
-let arrayItems = [
-  {
-    id: 0,
-    title: "Remera Rufit",
-    price: 900,
-    pictureUrl:
-      "https://www.rufit.com.ar/media/productos/a_f9bUcDP.jpg",
-  }
-];
 
 function ItemListContainer(props) {
 
   const [items, setItems] = useState([]);
-  useEffect(
-    () => {
-      setTimeout(async () => {
-        setItems(arrayItems);
-      }, 2000);
 
-    },
-    [
+  
+  useEffect(() => {
 
-    ]
-  );
-  return (
-    <div className="fs-2 text-center">
-      <>
-        <Card >
-          <Card.Body>
+      getProductos();
+    }, []);
+  
+    const getProductos = async () => {
+      try {
+        const res = await Productos();
+        setItems(res);
+      } catch (err) {
+        console.log("No se pueden cargar los datos,  ", err);
+      }
+    };
 
-            <br></br>
-
-            <br></br>
-            
-            <ItemCount stock={10} initial={1} />
-            <br/>
-            <ItemList items={items} />
-          </Card.Body>
-        </Card>
-      </>
-    </div>
-  );
+  return( <div>
+          <ItemList items={items} />
+          </div>);
 }
 export default ItemListContainer;

@@ -1,28 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from '../ItemDetails/ItemDetails';
-
+import { useParams } from "react-router-dom";
+import { arrayItems} from "../Productos/Productos.js"
 
 function ItemDetailContainer() {
     const [item, setItem] = useState({})
 
-    const getItem = async () => {
-        setTimeout(async () => {
-            setItem({
+    const { itemId } = useParams();
 
-                id: 0,
-                title: "Remera Rufit",
-                price: 900,
-                pictureUrl:
-                    "https://www.rufit.com.ar/media/productos/a_f9bUcDP.jpg",
-            });
-        }, 1000);
+    const getItem = (itemId) => {
+      const UnItem = arrayItems.find((el) => el.id === itemId);
+      setItem(UnItem);
     };
-
+  
     useEffect(() => {
-        getItem();
-    }, [])
+      getItem(itemId);
+    }, [itemId]);
+
     return <ItemDetail item={item} />
 
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
