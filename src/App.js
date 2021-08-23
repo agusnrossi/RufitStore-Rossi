@@ -1,17 +1,11 @@
-
-import './App.css';
-import NavBar from'./Componentes/NavBar/navBar'
-
-import { Router } from 'react-router-dom';
-
+import "./App.css";
+import Router from "./Router/Router";
+//import NavBar from "./Componentes/NavBar/navBar";
 
 function App() {
   return (
     <div className="App">
-     
-        <NavBar/>{''}
-        
-        <Router/>
+      <Router />
     </div>
   );
 }

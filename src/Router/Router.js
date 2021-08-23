@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import ItemDetailContainer from "../Components/ItemDetailContainer";
-import ItemListContainer from "../Components/ItemsListContainer";
-import NavBar from "../Components/NavBar";
+import ItemDetailContainer from "../Componentes/ItemDetails/ItemDetailsContainer";
+import ItemListContainer from "../Componentes/ItemListContainer/ItemListContainer";
+import NavBar from "../Componentes/NavBar/navBar";
 
 const Router = () => {
   return (
