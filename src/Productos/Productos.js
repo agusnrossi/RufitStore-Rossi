@@ -18,7 +18,7 @@ export let arrayItems = [
     title: "Proteinas ",
     category: "suplementos",
     price: 1300,
-    pictureUrl: "../assests/img/syntha_6.jpg",
+    pictureUrl: "../assets/img/syntha_6.jpg",
   },
 ];
 
