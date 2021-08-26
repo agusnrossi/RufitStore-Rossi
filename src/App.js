@@ -1,10 +1,14 @@
 import "./App.css";
+import React from "react";
 import Router from "./Router/Router";
+import { CartProvider } from "./Componentes/Context/CartContext";
 
 function App() {
   return (
     <div className="App">
-      <Router />
+      <CartProvider>
+        <Router />
+      </CartProvider>
     </div>
   );
 }

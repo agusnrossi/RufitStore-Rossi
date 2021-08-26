@@ -6,6 +6,8 @@ function Item({ id, title, price, pictureUrl }) {
   return (
     <Link to={`/item/${id}`}>
       <Card style={{ width: "18rem" }}>
+      <Row className="justify-content-md-center">
+    <Col xs lg="2">
         <Card.Img variant="top" src={pictureUrl} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
@@ -14,6 +16,8 @@ function Item({ id, title, price, pictureUrl }) {
 
           <Button variant="danger">+ INFO</Button>
         </Card.Body>
+        <Row className="justify-content-md-center">
+    <Col xs lg="2"></Col>
       </Card>
     </Link>
   );
