@@ -11,7 +11,23 @@ export const CartProvider = ({ children }) => {
     setItems([]);
   };
 
-  const cartSize = () => items.reduce((acc, cur) => cur.quantity + acc, 0);
+  const cartSize =
+    items.lenght > 0 ? items.reduce((acc, cur) => acc + cur.quantity, 0) : 0;
+
+  const getItem = (id) => items.findIndex((e) => e.item.id === id);
+
+  const removeItems = (id, amount) => {
+    if (getItem(id).quantity > amount) {
+      setItems(
+        items.map((e) => {
+          if (e.item.id === id) e.quantity -= amount;
+          return e;
+        })
+      );
+    } else {
+      removeItem(id);
+    }
+  };
 
   const removeItem = (id) => {
     setItems(items.filter((e) => e.item.id !== id));
