@@ -1,3 +1,4 @@
+/*
 export let arrayItems = [
   {
     id: 1,
@@ -30,3 +31,4 @@ export const productos = async () => {
   });
   return promise;
 };
+*/
