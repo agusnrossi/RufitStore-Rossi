@@ -7,12 +7,14 @@ import { CartContext } from "../Context/CartContext";
 function CartWidget() {
   const { cartSize } = useContext(CartContext);
   return (
-    <Link to="/cart">
-      <Button variant="danger">
-        <MdShoppingCart />
-        <span style={{ marginRight: 250 }}>{cartSize}</span>
-      </Button>
-    </Link>
+    cartSize === 0 || (
+      <Link to="/cart">
+        <Button variant="danger">
+          <MdShoppingCart color="white" />
+          <span>{cartSize}</span>
+        </Button>
+      </Link>
+    )
   );
 }
 
